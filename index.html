@@ -199,16 +199,6 @@
 					var users = JSON.parse(localStorage.users);
 					whereIs(users);
 				}
-				$('#whereis').submit((e) => {
-					e.preventDefault();
-					var users = JSON.parse(localStorage.users);
-					if (users.indexOf(data.user) == -1 && $('#whereis input[type=text]').val().length > 0)
-						whereIs([$('#whereis input[type=text]').val()]);
-					$('#whereis input[type=text]').val('');
-				});
-				$('#whereisUpdate').click((e) => {
-					updateAllUsers();
-				});
 				if (!localStorage.users || localStorage.users.length < 2 || !Array.isArray(JSON.parse(localStorage.users)))
 					localStorage.users = JSON.stringify([]);
 				updateAllUsers();
