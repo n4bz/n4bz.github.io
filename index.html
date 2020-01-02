@@ -197,7 +197,6 @@
 				function updateAllUsers() {
 					$('#hostUsers').html('');
 					var users = JSON.parse(localStorage.users);
-					whereIs(users);
 				}
 				if (!localStorage.users || localStorage.users.length < 2 || !Array.isArray(JSON.parse(localStorage.users)))
 					localStorage.users = JSON.stringify([]);
