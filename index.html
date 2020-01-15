@@ -1,205 +1,40 @@
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>42 clusters</title>
-		<link rel="stylesheet" href="reset.css">
-		<style type="text/css">
-			body {
-				text-align: center;
-				font-family: sans-serif;
-			}
-			img {
-				width: 100%;
-			}
-			#clusterLoad1, #clusterLoad2, #clusterLoad3 {
-				width: 0;
-			}
-			#clusters div {
-				display: inline-block;
-				width: 30vw;
-				text-align: center;
-				margin: 1vw;
-				background-color: white;
-				text-decoration: none;
-				cursor: pointer;
-				transition: background 0.3s ease-out, box-shadow 0.3s ease-out;
-			}
-			#clusters div:hover {
-				background-color: silver;
-    			box-shadow: 0 0 10px black;
-			}
-			#clusters div h2 {
-				margin: 10px;
-				font-size: 18px;
-			}
-			#clusters {
-				font-size: 0;
-			}
-			#clusters img {
-				height: calc(30vw * 1000 / 825);
-			}
-			#clusters #clusterLoad1, #clusters #clusterLoad2, #clusters #clusterLoad3 {
-				width: 0;
-				height: 0;
-			}
-			.inblk {
-				display: inline-block;
-				vertical-align: middle;
-			}
-			.whois {
-				margin: 5px;
-				font-weight: bold;
-				font-size: 1.5em;
-			}
-			.number {
-				border: none;
-				width: auto;
-				font-size: 14px;
-			}
-			.block {
-				font-size: initial;
-				vertical-align: top;
-				margin: 0.5%;
-				width: 32%;
-				display: inline-block;
-				line-height: 2em;
-				border-bottom: 2px solid #0066bf;
-				background-color: lightblue;
-				box-shadow: 0 5px 10px -5px black;
-				padding: 10px 0;
-			}
-			.block h2 {
-				font-size: 2em;
-				color: cornflowerblue;
-			}
-			#totalLog li {
-				background-color: rgba(100, 149, 237, 0.5);
-				margin: 1%;
-			}
-		</style>
-	</head>
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="canvasjs.min.js"></script>
-	<script type="text/javascript" src="data.js"></script>
-			<script>
-				$('#days').bind('change', function() {
-					var tmp = min;
-					min = parseInt($('#days').val());
-					min = (min >= 0) ? min : 0;
-					$('#days').val(min);
-					//console.log(min);
-					if (min != tmp) {
-						loadGraph(96*min);
-					}
-				})
-				var total = {}, newScore = false, req = 0;
-				function totalLog(user){
-					req++;
-					$.getJSON('?users='+user, (data)=>{
-						if (!data) {
-							req--;
-						}
-							var tot = 0, lastco = null, lsttrimestre = 0, trimestre = 0, month = ((Math.trunc((new Date().getMonth())/3)*3)+1)
-							dt = (new Date().getYear()+1900)+'-'+month+'-1 01:00:00',
-							lstdt = (new Date().getYear()+1900)+'-'+(month < 4 ? 10 : ((Math.trunc((new Date().getMonth()-3)/3)*3)+1))+'-1 01:00:00';
-						var lstlstdt = (new Date().getYear()+1900)+'-'+(month < 4 ? 10 : ((Math.trunc((new Date().getMonth()-6)/3)*3)+1))+'-1 01:00:00',
-							lstlsttrimestre = 0;
-						var lstlstlstdt = (new Date().getYear()+1900-1)+'-'+(true ? 10 : ((Math.trunc((new Date().getMonth()-9)/3)*3)+1))+'-1 01:00:00',
-							lstlstlsttrimestre = 0;
-						for(var i = data.length - 1; i >= 0; i--)
-						{
-							if (!isNaN(Date.parse(data[i].end_at)) && !isNaN(Date.parse(data[i].begin_at)))
-								tot += (Date.parse(data[i].end_at) - Date.parse(data[i].begin_at));
-							if (new Date(data[i].begin_at) > new Date(dt)) {
-								var h = Math.trunc(((data[i].end_at ? new Date(data[i].end_at) : new Date()) - new Date(data[i].begin_at))/1000/60/60*10)/10;
-								trimestre += h;
-								//console.log(i, new Date(data[i].begin_at), h);
-							}
-							if (new Date(data[i].begin_at) > new Date(lstdt) && new Date(data[i].begin_at) < new Date(dt)) {
-								var h = Math.trunc(((data[i].end_at ? new Date(data[i].end_at) : new Date()) - new Date(data[i].begin_at))/1000/60/60*10)/10;
-								lsttrimestre += h;
-								//console.log(i, new Date(data[i].begin_at), h);
-							}
-							if (new Date(data[i].begin_at) > new Date(lstlstdt) && new Date(data[i].begin_at) < new Date(lstdt)) {
-								var h = Math.trunc(((data[i].end_at ? new Date(data[i].end_at) : new Date()) - new Date(data[i].begin_at))/1000/60/60*10)/10;
-								lstlsttrimestre += h;
-								//console.log(i, new Date(data[i].begin_at), h);
-							}
-							if (new Date(data[i].begin_at) > new Date(lstlstlstdt) && new Date(data[i].begin_at) < new Date(lstlstdt)) {
-								var h = Math.trunc(((data[i].end_at ? new Date(data[i].end_at) : new Date()) - new Date(data[i].begin_at))/1000/60/60*10)/10;
-								lstlstlsttrimestre += h;
-								//console.log(i, new Date(data[i].begin_at), h);
-							}
-							if (data[i].end_at && data[i].begin_at) {
-								lastco = data[i].host;
-							}
-						}
-						total[user] = {};
-						total[user].tot = Math.trunc(tot*100)/100;
-						total[user].lstlstlsttri = Math.trunc(lstlstlsttrimestre*100)/100;
-						total[user].lstlsttri = Math.trunc(lstlsttrimestre*100)/100;
-						total[user].lsttri = Math.trunc(lsttrimestre*100)/100;
-						total[user].tri = Math.trunc(trimestre*100)/100;
-						total[user].lstco = lastco;
-						toVisit=[], alrdVisit=[];
-						for (var i = 1; i < 4; i++){
-							for (var j = 1; j < 14; j++){
-								for (var k = 1; k < 24; k++){
-									if (j == 1 && k > 14) continue;
-									if (j == 3 && k > 21) continue;
-									if (j == 5 && k > 22) continue;
-									if (j == 6 && k > 20) continue;
-									if (j == 8 && k > 21) continue;
-									if (j == 9 && k > 20) continue;
-									if (j == 13 && k > 14) continue;
-									toVisit.push('e'+i+'r'+j+'p'+k);
-								}
-							}
-						}
-						for (var i = 0; i < data.length; i++){
-							if ((index = toVisit.indexOf(data[i].host)) >= 0)
-								alrdVisit = alrdVisit.concat(toVisit.splice(index, 1));
-						}
-						console.log(user, toVisit, alrdVisit);
-						newScore = true;
-						req--;
-						//console.log(trimestre, 420-trimestre, (420-trimestre)/25);
-					});
-				}
-				$('#formLog').submit((e) => {
-					e.preventDefault();
-					totalLog($('#formLog').find('input[type=text]').val());
-					$('#formLog').find('input[type=text]').val('');
-				});
-				setInterval(()=>{
-					$('#infoLog').html(req+' requête(s) en recherche.')
-					if (newScore) {
-						newScore = false;
-						$('#totalLog').html('');
-						for(var user in total)
-							$('#totalLog').append('<li>'+user+' : '+
-								Math.trunc(total[user].tot/1000/60/60*100)/100+
-								' heures soit environ '+Math.trunc(total[user].tot/1000/60/60/24*100)/100+' jours<br>'+
-								'=> environ '+total[user].lstlstlsttri+' heures l\'avant avant dernier trimestre<br>'+
-								'=> environ '+total[user].lstlsttri+' heures l\'avant dernier trimestre<br>'+
-								'=> environ '+total[user].lsttri+' heures le dernier trimestre<br>'+
-								'=> environ '+total[user].tri+' heures ce trimestre<br>'+
-								'last host: '+total[user].lstco+'</li>');
-					}
-				}, 1000)
-				
-				function deleteUser(login) {
-					//console.log('del '+login);
-					var users = JSON.parse(localStorage.users);
-					users = users.filter((v)=>{return (v != login);});
-					localStorage.users = JSON.stringify(users);
-				}
-				function updateAllUsers() {
-					$('#hostUsers').html('');
-					var users = JSON.parse(localStorage.users);
-				}
-				if (!localStorage.users || localStorage.users.length < 2 || !Array.isArray(JSON.parse(localStorage.users)))
-					localStorage.users = JSON.stringify([]);
-				updateAllUsers();
-			</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table {
+                border-collapse: collapse;
+                border: 2px black solid;
+                font: 12px sans-serif;
+            }
+
+            td {
+                border: 1px black solid;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <script src="d3.min.js?v=3.2.8"></script>
+
+        <script type="text/javascript"charset="utf-8">
+            d3.text("data.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("body")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
+    </body>
 </html>
