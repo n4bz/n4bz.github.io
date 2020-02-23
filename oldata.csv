@@ -9,7 +9,6 @@ youkhart,2.03,april/2019,Benguerir
 mamoussa,2.03,august/2019,Benguerir
 ojoubout,2.02,july/2019,Benguerir
 zzarrafa,2.02,august/2019,Benguerir
-sel-fadi,2.02,august/2019,Benguerir
 mbani,2.02,august/2019,Benguerir
 mlasrite,2.02,august/2019,Benguerir
 oimejad,1.99,july/2019,Benguerir
@@ -24,6 +23,7 @@ oel-bour,1.85,april/2019,Benguerir
 mbrija,1.85,april/2019,Benguerir
 abiari,1.85,april/2019,Benguerir
 ibaali,1.85,july/2019,Benguerir
+sel-fadi,1.85,august/2019,Benguerir
 ibouhiri,1.83,august/2019,Benguerir
 helkhatr,1.8199999999999998,august/2019,Khouribga
 isaadi,1.6099999999999999,august/2019,Benguerir
@@ -51,7 +51,6 @@ ahamdaou,0.97,july/2019,Benguerir
 aait-ham,0.97,july/2019,Benguerir
 fbouibao,0.97,july/2019,Benguerir
 ler-rech,0.97,july/2019,Benguerir
-ael-aray,0.97,july/2019,Benguerir
 atahiri,0.97,july/2019,Benguerir
 moerradi,0.97,august/2019,Benguerir
 akhalid,0.97,august/2019,Benguerir
@@ -133,10 +132,8 @@ aymaatou,0.94,april/2019,Benguerir
 ayghazal,0.94,april/2019,Benguerir
 anassif,0.94,april/2019,Benguerir
 ylhouari,0.94,april/2019,Benguerir
-tkhabous,0.94,july/2019,Benguerir
 okimdil,0.94,july/2019,Benguerir
 oel-ouar,0.94,july/2019,Benguerir
-majdahim,0.94,july/2019,Benguerir
 mchergui,0.94,july/2019,Benguerir
 hboudhir,0.94,july/2019,Benguerir
 htagrour,0.94,august/2019,Benguerir
@@ -144,7 +141,6 @@ aali-mou,0.94,august/2019,Benguerir
 hfadyl,0.94,august/2019,Benguerir
 hnaji-el,0.94,august/2019,Benguerir
 amaach,0.94,august/2019,Benguerir
-ael-kass,0.94,august/2019,Benguerir
 knabouss,0.94,august/2019,Khouribga
 rbougssi,0.93,august/2019,Khouribga
 aamzouar,0.62,april/2019,Benguerir
@@ -180,6 +176,7 @@ mobaz,0.59,july/2019,Benguerir
 yer-raki,0.59,july/2019,Benguerir
 mel-haya,0.59,july/2019,Benguerir
 mochegri,0.59,july/2019,Benguerir
+ael-aray,0.59,july/2019,Benguerir
 mlabrayj,0.59,july/2019,Benguerir
 mmarzouk,0.59,july/2019,Benguerir
 isghioua,0.59,july/2019,Benguerir
@@ -187,7 +184,6 @@ am-khant,0.59,august/2019,Benguerir
 ozakkare,0.59,august/2019,Benguerir
 fsarbout,0.59,august/2019,Benguerir
 matraore,0.59,august/2019,Benguerir
-sel-fcht,0.59,august/2019,Benguerir
 sbensarg,0.59,august/2019,Benguerir
 arraji,0.59,august/2019,Khouribga
 oennaimi,0.59,august/2019,Khouribga
@@ -200,12 +196,14 @@ emallah,0.58,april/2019,Benguerir
 ynoam,0.58,april/2019,Benguerir
 abel-haj,0.58,april/2019,Benguerir
 nainhaja,0.58,july/2019,Benguerir
+tkhabous,0.58,july/2019,Benguerir
 ztaouil,0.58,july/2019,Benguerir
 ahammani,0.58,july/2019,Benguerir
+majdahim,0.58,july/2019,Benguerir
 yhebbat,0.58,july/2019,Benguerir
-nabboudi,0.58,august/2019,Benguerir
 ynejmi,0.58,august/2019,Benguerir
 bsanaoui,0.58,august/2019,Benguerir
+ael-kass,0.58,august/2019,Benguerir
 yait-kad,0.58,july/2018,Khouribga
 asbai-el,0.58,july/2018,Khouribga
 zoizmer,0.57,april/2019,Benguerir
@@ -219,10 +217,8 @@ ehakam,0.5,july/2019,Benguerir
 mafajat,0.49,april/2019,Benguerir
 haboussi,0.48,april/2019,Benguerir
 yjerroud,0.47,april/2019,Benguerir
-ayafdel,0.46,july/2019,Benguerir
 laafilal,0.42,april/2019,Benguerir
 amaghat,0.42,april/2019,Benguerir
-tjmari,0.42,july/2019,Benguerir
 mbennaja,0.42,august/2019,Khouribga
 hel-hark,0.42,august/2019,Khouribga
 obounri,0.42,august/2019,Khouribga
@@ -238,6 +234,7 @@ hael-bri,0.41,august/2019,Khouribga
 schancho,0.4,april/2019,Benguerir
 otaouil,0.4,july/2019,Benguerir
 oel-yous,0.4,august/2019,Benguerir
+sel-fcht,0.4,august/2019,Benguerir
 mahmidi,0.4,july/2018,Khouribga
 abbelhac,0.4,august/2019,Khouribga
 mkchikec,0.4,august/2019,Khouribga
@@ -249,8 +246,8 @@ afall,0.39,july/2019,Benguerir
 hgrissen,0.39,july/2019,Benguerir
 mbifenzi,0.39,july/2019,Benguerir
 asenhaji,0.39,july/2019,Benguerir
-ntantaou,0.39,august/2019,Benguerir
 rlahmaid,0.39,august/2019,Benguerir
+nabboudi,0.39,august/2019,Benguerir
 mazoukni,0.39,august/2019,Benguerir
 amaaiza,0.39,august/2019,Benguerir
 mamali,0.39,august/2019,Benguerir
@@ -280,13 +277,16 @@ aaboukha,0.31,july/2019,Benguerir
 ael-hach,0.3,july/2019,Benguerir
 mrachidi,0.3,july/2019,Benguerir
 oidrissi,0.3,july/2019,Benguerir
+ntantaou,0.3,august/2019,Benguerir
 atabout,0.3,august/2019,Benguerir
 ybichri,0.3,august/2019,Khouribga
 mel-haih,0.28,july/2019,Benguerir
+ayafdel,0.28,july/2019,Benguerir
 ztelmoud,0.28,august/2019,Benguerir
 ael-mezz,0.28,august/2019,Benguerir
 abelarif,0.28,august/2019,Benguerir
 agourrag,0.21,july/2018,Khouribga
+tjmari,0.2,july/2019,Benguerir
 obarbach,0.19,july/2019,Benguerir
 achancho,0.19,august/2019,Benguerir
 ametkal,0.11,april/2019,Benguerir
